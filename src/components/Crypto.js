@@ -6,7 +6,7 @@ import _ from "lodash";
 function Crypto(props){
     const cryptoId = props.match.params.id;
   const dispatch = useDispatch()
-  const cryptoState = useSelector(state => state.id)
+  const cryptoState = useSelector(state => state.Crypto)
   React.useEffect( () => {
     dispatch(GetCrypto(cryptoId))
   },[cryptoId, dispatch]);

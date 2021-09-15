@@ -4,7 +4,7 @@ import CryptoMultipleReducer from "./CryptoMultipleReducer"
 
 const RootReducer = combineReducers({
     CryptoList: CryptoListReducer,
-    id: CryptoMultipleReducer
+    Crypto: CryptoMultipleReducer
 
 })
 
