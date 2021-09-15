@@ -1,9 +1,11 @@
-import _ from 'lodash';
-import React from 'react';
+import _, { initial } from 'lodash';
+import "../components/App.css"
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {GetCryptoList} from '../actions/cryptoActions'
 import {Link} from 'react-router-dom'
-function CryptoList(){
+const CryptoList = (props) =>{
+    const [search, setSearch] = useState("");
     const dispatch = useDispatch();
     const cryptoList = useSelector(state => state.CryptoList);
  React.useEffect( () => {
@@ -18,18 +20,28 @@ function CryptoList(){
 
 
   const ShowData = () => {
-      if( !_.isEmpty(cryptoList.data)){
-          console.log(cryptoList.data[3])
-          return cryptoList.data.map(el =>{
-          return <div>
-          <p>{el.id}</p>
-          {/* <p>{el.image}</p> */}
-          <Link to={`/Crypto/${el.id}`}>View</Link>
+    const filteredCoins = cryptoList.data.filter(coin =>
+        coin.name.toLowerCase().includes(search.toLowerCase())
+      );
 
+      if( !_.isEmpty(cryptoList.data)){
+        return (
+        <div className={"list-wrapper"}>
+          {filteredCoins.map(el =>{
+          return (
+            <div className={"list-item"}>
+                <img className={"list-img"}src={el.image} alt=""/>
+          <div className={"End"}>
+          <p >{el.id}</p>
+          <Link to={`/Crypto/${el.id}`}>View</Link>
           </div>
-          })
-      }
-  
+          </div>
+            )
+          })}
+        </div>
+      )
+    }
+    
   if( cryptoList.loading){
     return <p>loading</p>
 }
@@ -43,6 +55,16 @@ return <p>Unable to get data</p>
 
     return (
         <div>
+       
+          
+
+
+            <div className="search-section">
+                <p>Search: </p>
+                <input type="text" placeholder='search' onChange={e => setSearch(e.target.value)}/>
+                
+
+            </div>
             {ShowData()}
         </div>
     )

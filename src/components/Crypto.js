@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { GetCrypto } from '../actions/cryptoActions';
 import _ from "lodash";
+import "../components/App.css"
 
 function Crypto(props){
     const cryptoId = props.match.params.id;
@@ -18,7 +19,7 @@ function Crypto(props){
         if(!_.isEmpty(cryptoState.data[cryptoId])){
          const cry =  cryptoState.data[cryptoId][0]
              return (
-                 <div>
+                 <div className="Wrapper">
                      <img src={cry.image} alt=""/>
              <h3>Name : {cry.name}</h3> 
              <h4>Symbol : {cry.symbol}</h4> 
