@@ -6,17 +6,29 @@ import _ from "lodash";
 function Crypto(props){
     const cryptoId = props.match.params.id;
   const dispatch = useDispatch()
-  const cryptoState = useSelector(state => state.Crypto)
+  const cryptoState = useSelector(state => state.id)
   React.useEffect( () => {
     dispatch(GetCrypto(cryptoId))
   },[cryptoId, dispatch]);
 
 
-console.log( cryptoId)
+
 
     const ShowData = () =>{
         if(!_.isEmpty(cryptoState.data[cryptoId])){
-         return <p>Have data</p>
+         const cry =  cryptoState.data[cryptoId][0]
+             return (
+                 <div>
+                     <img src={cry.image} alt=""/>
+             <h3>Name : {cry.name}</h3> 
+             <h4>Symbol : {cry.symbol}</h4> 
+             <h4>Price : ${cry.current_price}</h4>
+             {cry.price_change_percentage_24h < 0 ?(
+             <h4 className="percent-red">Price change last 24hr : {cry.price_change_percentage_24h.toFixed(2)} %</h4>) : (<h4 className="percent-green">Price change last 24hr : {cry.price_change_percentage_24h.toFixed(2)} %</h4>)}
+             
+             </div>
+             ) 
+            
         }
         if(cryptoState.loading){
             return <p>loading</p>
@@ -26,11 +38,8 @@ console.log( cryptoId)
            }
            return<p>ERRROR</p>
     }
-
-
   return(
-    <div className={"poke"}>
-      <h1>{cryptoId}</h1>
+    <div className={"cryp"}>
       <h2>{ShowData()}</h2>
      
     </div>

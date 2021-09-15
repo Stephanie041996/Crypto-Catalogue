@@ -19,6 +19,7 @@ function CryptoList(){
 
   const ShowData = () => {
       if( !_.isEmpty(cryptoList.data)){
+          console.log(cryptoList.data[3])
           return cryptoList.data.map(el =>{
           return <div>
           <p>{el.id}</p>

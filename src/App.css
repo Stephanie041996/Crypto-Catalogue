@@ -12,3 +12,11 @@ nav a{
   padding-right: 100px;
   text-decoration: none;
 }
+
+.percent-green {
+  color: green;
+}
+
+.percent-red {
+  color: red;
+}
