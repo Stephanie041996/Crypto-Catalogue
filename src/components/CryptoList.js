@@ -10,7 +10,6 @@ function CryptoList(){
      FetchData()
  // eslint-disable-next-line react-hooks/exhaustive-deps
  },[]);
-//  , deps: []
 
  const FetchData = () =>{
      dispatch(GetCryptoList())
