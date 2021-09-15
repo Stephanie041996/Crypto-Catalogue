@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {GetCryptoList} from '../actions/cryptoActions'
 import {Link} from 'react-router-dom'
+
 const CryptoList = (props) =>{
     const [search, setSearch] = useState("");
     const dispatch = useDispatch();
@@ -59,8 +60,8 @@ return <p>Unable to get data</p>
           
 
 
-            <div className="search-section">
-                <p>Search: </p>
+            <div style={{ backgroundImage: "url(/img/pexels2.jpg)",  backgroundPosition: 'bottom', backgroundSize: '1500px 270px' }} className="search-section">
+             
                 <input type="text" placeholder='search' onChange={e => setSearch(e.target.value)}/>
                 
 
