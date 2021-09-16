@@ -23,7 +23,6 @@ const CryptoMultipleReducer = (state = DefaultState, action) => {
         ...state,
         loading: false,
         errorMessage: '',
-        data: action.payload,
         data: {
           ...state.data,
           [action.cryptoId]: action.payload,
