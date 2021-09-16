@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable react/jsx-key */
 import _ from 'lodash';
 import './App.css';
 import React, { useState } from 'react';
