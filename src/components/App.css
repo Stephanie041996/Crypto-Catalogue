@@ -11,14 +11,19 @@ nav {
   justify-content: space-around;
 }
 
-nav a{
+.list-item,
+a {
+color: #fcfcfc;
+}
+
+nav a {
   color: azure;
   text-decoration: none;
 }
 
- h4 {
-   color: #fcfcfc;
- }
+h4 {
+  color: #fcfcfc;
+}
 
 .percent-green {
   color: green;
@@ -47,27 +52,21 @@ nav a{
   /* column-count: 2;
   column-width: 50%;
   column-gap: 0; */
-  margin: 0rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
-  grid-gap: 0rem;
+  grid-gap: 0;
   color: #fcfcfc;
   font-size: 20px;
   font-weight: 600;
 }
 
 .list-item {
-  display: flex; 
-  justify-content: center;
+  display: flex;
   padding: 20px;
   border-style: groove;
   border-width: 1px;
   justify-content: center;
   background-color: rgb(19, 18, 18);
-}
-
-.list-item, a {
-color: #fcfcfc;
 }
 
 .End {
@@ -120,20 +119,21 @@ input[type=text] {
   }
 
  .End {
-   margin-left: 80px;
-   align-self: flex-end;
+    margin-left: 80px;
+    align-self: flex-end;
   }
-.list-img {
-   width: 150px;
-   height: 150px;
-}
 
-.Single-Crypto-Wrapper{
-  display: flex;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  align-items: center;
-  padding-right: 24px;
-  min-width: 300px;
-}
+ .list-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .Single-Crypto-Wrapper{
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    align-items: center;
+    padding-right: 24px;
+    min-width: 300px;
+  }
 }
