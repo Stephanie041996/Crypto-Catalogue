@@ -117,12 +117,12 @@ input[type=text] {
     display: flex;
   }
 
- .End {
+  .End {
     margin-left: 80px;
     align-self: flex-end;
   }
 
- .list-img {
+  .list-img {
     width: 150px;
     height: 150px;
   }
