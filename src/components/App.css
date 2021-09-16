@@ -13,7 +13,7 @@ nav {
 
 .list-item,
 a {
-color: #fcfcfc;
+  color: #fcfcfc;
 }
 
 nav a {
@@ -79,7 +79,7 @@ h4 {
   height: 80px;
 }
 
-.Single-Crypto-Wrapper{
+.Single-Crypto-Wrapper {
   justify-content: center;
   padding-left: 60px;
 }
@@ -90,6 +90,7 @@ img {
   margin-right: 10px;
 }
 
+.Single-Crypto-Wrapper,
 h4 {
   margin-right: 20px;
 }
@@ -109,9 +110,7 @@ input[type=text] {
     margin: 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
-    grid-gap: 0rem;
-   
-  
+    grid-gap: 0;
   }
 
   .list-item {
@@ -128,7 +127,7 @@ input[type=text] {
     height: 150px;
   }
 
-  .Single-Crypto-Wrapper{
+  .Single-Crypto-Wrapper {
     display: flex;
     padding-top: 50px;
     padding-bottom: 50px;
