@@ -1,17 +1,23 @@
+body {
+  background-color: #262626;
+}
 nav {
   display: flex;
   width: 100%;
   height: 50px;
-  justify-content: flex-end;
-  background-color: deeppink;
+  background-color: #3a63ae;
   align-items: center;
+  justify-content: space-around;
+
 }
 
 nav a{
   color: azure;
-  padding-right: 100px;
   text-decoration: none;
 }
+ h4 {
+   color: #fcfcfc;
+ }
 
 .percent-green {
   color: green;
@@ -34,26 +40,35 @@ nav a{
   padding-top: 150px;
   padding-bottom: 80px;
  
+  background-color: #5586e2;
+ 
 }
 
 .list-wrapper {
-  column-count: 2;
+  /* column-count: 2;
   column-width: 50%;
-  column-gap: 0;
-  /* margin: 1rem;
+  column-gap: 0; */
+  margin: 0rem;
   display: grid;
-  
-  grid-gap: 1rem;
-  grid-column: 2; */
-
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  grid-gap: 0rem;
+ color: #fcfcfc;
+font-size: 20px;
+font-weight: 600;
 }
 
 .list-item {
    display: flex; 
-  border-style: solid;
   justify-content: center;
   padding: 20px;
-
+  border-style: groove;
+  border-width: 1px;
+  justify-content: center;
+  background-color: rgb(19, 18, 18);
+}
+ 
+.list-item, a {
+color: #fcfcfc;
 }
 
 .End {
@@ -62,18 +77,49 @@ nav a{
 }
 .list-img {
  
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
  
 }
 
+.Single-Crypto-Wrapper{
+justify-content: center;
+padding-left: 60px;
+}
+
+img {
+  height: 45px;
+  width: 45px;
+  margin-right: 10px;
+}
+
+h4 {
+  margin-right: 20px;
+}
+
+input[type=text] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
 @media only screen and (min-width: 768px) {
-.list-item {
+  .list-wrapper {
+    /* column-count: 2;
+    column-width: 50%;
+    column-gap: 0; */
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+    grid-gap: 0rem;
+   
+  
+  }
+
+  .list-item {
   display: flex; 
- border-style: groove;
- border-width: 1px;
- justify-content: center;
- padding: 20px;
+
+
  
 
 }
@@ -88,4 +134,15 @@ nav a{
  height: 150px;
 
 }
+
+.Single-Crypto-Wrapper{
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  align-items: center;
+  padding-right: 24px;
+
+  min-width: 300px;
+}
+
 }

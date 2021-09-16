@@ -33,7 +33,7 @@ const CryptoList = (props) =>{
             <div className={"list-item"}>
                 <img className={"list-img"}src={el.image} alt=""/>
           <div className={"End"}>
-          <p >{el.id}</p>
+          <p >{el.name}</p>
           <Link to={`/Crypto/${el.id}`}>View</Link>
           </div>
           </div>
@@ -60,7 +60,7 @@ return <p>Unable to get data</p>
           
 
 
-            <div style={{ backgroundImage: "url(/img/pexels2.jpg)",  backgroundPosition: 'bottom', backgroundSize: '1500px 270px' }} className="search-section">
+            <div style={{ backgroundImage: "url(/img/bitcoin.png)",  backgroundPosition: '30% 50%', backgroundSize: '250px 250px',  backgroundRepeat: 'no-repeat'}} className="search-section">
              
                 <input type="text" placeholder='search' onChange={e => setSearch(e.target.value)}/>
                 

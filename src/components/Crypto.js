@@ -19,9 +19,9 @@ function Crypto(props){
         if(!_.isEmpty(cryptoState.data[cryptoId])){
          const cry =  cryptoState.data[cryptoId][0]
              return (
-                 <div className="Wrapper">
+                 <div className={"Single-Crypto-Wrapper"}>
                      <img src={cry.image} alt=""/>
-             <h3>Name : {cry.name}</h3> 
+             <h4>Name : {cry.name}</h4> 
              <h4>Symbol : {cry.symbol}</h4> 
              <h4>Price : ${cry.current_price}</h4>
              {cry.price_change_percentage_24h < 0 ?(
