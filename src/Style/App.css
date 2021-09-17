@@ -102,6 +102,11 @@ input[type=text] {
   box-sizing: border-box;
 }
 
+.cryp {
+  text-align: center;
+  color: #fcfcfc;
+}
+
 @media only screen and (min-width: 768px) {
   .list-wrapper {
     margin: 1rem;

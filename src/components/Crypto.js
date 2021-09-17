@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import _ from 'lodash';
@@ -15,7 +14,6 @@ const Crypto = (props) => {
     dispatch(GetCrypto(cryptoId));
   }, [cryptoId, dispatch]);
 
-  console.log(test.match);
   const ShowData = () => {
     if (!_.isEmpty(cryptoState.data[cryptoId])) {
       const cry = cryptoState.data[cryptoId][0];
@@ -70,10 +68,4 @@ const Crypto = (props) => {
   );
 };
 
-Crypto.defaultProps = {
-  testing: {
-    path: '/Crypto/:id', url: '/Crypto/bitcoin', isExact: true, params: { id: 'bitcoin' },
-  },
-  id: 'bitcoin',
-};
 export default Crypto;

@@ -16,20 +16,3 @@ exports[`should render the list of cryptos 1`] = `
   </div>
 </DocumentFragment>
 `;
-
-exports[`should render the list of ingredients 1`] = `
-<DocumentFragment>
-  <div
-    class="cryp"
-  >
-    <h2>
-      Crypto Info
-    </h2>
-    <h2>
-      <p>
-        ERRROR
-      </p>
-    </h2>
-  </div>
-</DocumentFragment>
-`;

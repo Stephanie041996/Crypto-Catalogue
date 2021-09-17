@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import Crypto from '../../components/Crypto';
@@ -36,5 +36,17 @@ describe('Crypto DOM', () => {
       </Provider>,
     ).toJSON();
     expect(Cryp.name).not.toBe('random');
+  });
+
+  it("Displays pages's title", () => {
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Crypto match={match} />
+        </BrowserRouter>
+      </Provider>,
+    );
+    const element = screen.getByText(/Crypto Info/i);
+    expect(element).toBeInTheDocument();
   });
 });
