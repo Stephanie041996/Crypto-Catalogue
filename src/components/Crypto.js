@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import _ from 'lodash';
@@ -6,13 +7,15 @@ import '../Style/App.css';
 
 const Crypto = (props) => {
   const test = props;
-  const cryptoId = test.match.params.id;
+  const testing = test.match.params;
+  const cryptoId = testing.id;
   const dispatch = useDispatch();
   const cryptoState = useSelector((state) => state.id);
   React.useEffect(() => {
     dispatch(GetCrypto(cryptoId));
   }, [cryptoId, dispatch]);
 
+  console.log(test.match);
   const ShowData = () => {
     if (!_.isEmpty(cryptoState.data[cryptoId])) {
       const cry = cryptoState.data[cryptoId][0];
@@ -60,10 +63,17 @@ const Crypto = (props) => {
   };
   return (
     <div className="cryp">
+      <h2>Crypto Info</h2>
       <h2>{ShowData()}</h2>
 
     </div>
   );
 };
 
+Crypto.defaultProps = {
+  testing: {
+    path: '/Crypto/:id', url: '/Crypto/bitcoin', isExact: true, params: { id: 'bitcoin' },
+  },
+  id: 'bitcoin',
+};
 export default Crypto;
