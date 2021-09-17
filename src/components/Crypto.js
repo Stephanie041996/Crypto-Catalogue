@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import _ from 'lodash';
-import PropTypes from 'prop-types';
 import { GetCrypto } from '../actions/cryptoActions';
-import './App.css';
+import '../Style/App.css';
 
-function Crypto({ id }) {
-  const cryptoId = { id }.match.params;
+const Crypto = (props) => {
+  const test = props;
+  const cryptoId = test.match.params.id;
   const dispatch = useDispatch();
   const cryptoState = useSelector((state) => state.id);
   React.useEffect(() => {
@@ -64,9 +64,6 @@ function Crypto({ id }) {
 
     </div>
   );
-}
-
-Crypto.propTypes = {
-  id: PropTypes.string.isRequired,
 };
+
 export default Crypto;

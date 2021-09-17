@@ -1,5 +1,4 @@
 import React from 'react';
-// import './App.css';
 import {
   Switch, Route, NavLink, Redirect,
 } from 'react-router-dom';

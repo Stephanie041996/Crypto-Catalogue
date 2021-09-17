@@ -1,7 +1,5 @@
-/* eslint-disable max-len */
-/* eslint-disable react/jsx-key */
 import _ from 'lodash';
-import './App.css';
+import '../Style/App.css';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -19,13 +17,13 @@ const CryptoList = () => {
   }, []);
 
   const ShowData = () => {
-    const filteredCoins = cryptoList.data.filter((coin) => coin.name.toLowerCase().includes(search.toLowerCase()));
+    const filteredCoins = cryptoList.data.filter((coin) => coin.id.includes(search.toLowerCase()));
 
     if (!_.isEmpty(cryptoList.data)) {
       return (
         <div className="list-wrapper">
           {filteredCoins.map((el) => (
-            <div className="list-item">
+            <div key={el.id} className="list-item">
               <img className="list-img" src={el.image} alt="" />
               <div className="End">
                 <p>{el.name}</p>
