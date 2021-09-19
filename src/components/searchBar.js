@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Search({ handleChange }) {
   return (
@@ -22,5 +22,7 @@ function Search({ handleChange }) {
     </div>
   );
 }
-
+Search.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+};
 export default Search;
