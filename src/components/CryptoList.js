@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import _ from 'lodash';
 import '../Style/App.css';
 import React, { useState } from 'react';
@@ -5,8 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { GetCryptoList } from '../actions/cryptoActions';
 
-const CryptoList = () => {
-  const [search, setSearch] = useState('');
+const CryptoList = ({ filteredCoins }) => {
+  // const [search, setSearch] = useState('');
   const dispatch = useDispatch();
   const cryptoList = useSelector((state) => state.CryptoList);
   const FetchData = () => {
@@ -17,7 +19,7 @@ const CryptoList = () => {
   }, []);
 
   const ShowData = () => {
-    const filteredCoins = cryptoList.data.filter((coin) => coin.id.includes(search.toLowerCase()));
+    //  filteredCoins = cryptoList.data.filter((coin) => coin.id.includes(search.toLowerCase()));
 
     if (!_.isEmpty(cryptoList.data)) {
       return (
@@ -47,16 +49,17 @@ const CryptoList = () => {
   return (
     <div>
 
-      <div
+      {/* <div
         style={{
-          backgroundImage: 'url(/img/bitcoin.png)', backgroundPosition: '30% 50%', backgroundSize: '250px 250px', backgroundRepeat: 'no-repeat',
+        backgroundImage: 'url(/img/bitcoin.png)', backgroundPosition:
+        '30% 50%', backgroundSize: '250px 250px', backgroundRepeat: 'no-repeat',
         }}
         className="search-section"
       >
 
         <input type="text" placeholder="search" onChange={(e) => setSearch(e.target.value)} />
 
-      </div>
+      </div> */}
       {ShowData()}
     </div>
   );

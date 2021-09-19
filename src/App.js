@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import {
   Switch, Route, NavLink, Redirect,
@@ -6,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faUndo } from '@fortawesome/free-solid-svg-icons';
 import Crypto from './components/Crypto';
 import CryptoList from './components/CryptoList';
+import Search from './components/searchBar';
+import initialdetails from './components/ListTemp';
 
 function App() {
   const element = <FontAwesomeIcon icon={faBars} />;
@@ -18,7 +21,7 @@ function App() {
         <NavLink to="/">{element2}</NavLink>
       </nav>
       <Switch>
-        <Route path="/" exact component={CryptoList} />
+        <Route path="/" exact component={Search} />
         <Route path="/Crypto/:id" exact component={Crypto} />
         <Redirect to="/" />
       </Switch>
