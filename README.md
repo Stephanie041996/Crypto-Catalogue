@@ -1,7 +1,7 @@
 #  Crypto Catalogue App Built with React and Redux
-A catalogue of crypto currencies and thier current price informations which are fetched from  the API [coingecko](https://www.coingecko.com/en/api/documentation).
+A catalogue of cryptocurrencies and their current price information which is fetched from the API coingecko.
 
- Users can filter the displayed crypto currencies searching by thier name. Then directly view each individually.
+Users can filter the displayed cryptocurrencies by searching their names. Then directly view each individually.
 
 ![screenshot](./Screen-Shot.png)
 
