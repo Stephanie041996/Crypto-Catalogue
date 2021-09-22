@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {
+  Switch, Route, NavLink, Redirect,
+} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faUndo } from '@fortawesome/free-solid-svg-icons';
+import Crypto from './components/Crypto';
+import CryptoList from './components/CryptoList';
 
 function App() {
+  const element = <FontAwesomeIcon icon={faBars} />;
+  const element2 = <FontAwesomeIcon icon={faUndo} />;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+        <NavLink to="/">{element}</NavLink>
+        <h4>The Crypto Lookup</h4>
+        <NavLink to="/">{element2}</NavLink>
+      </nav>
+      <Switch>
+        <Route path="/" exact component={CryptoList} />
+        <Route path="/Crypto/:id" exact component={Crypto} />
+        <Redirect to="/" />
+      </Switch>
+
     </div>
   );
 }
