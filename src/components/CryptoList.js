@@ -4,10 +4,11 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { GetCryptoList } from '../actions/cryptoActions';
+import Search from './searchBar';
 
 const CryptoList = () => {
-  const [search, setSearch] = useState('');
   const dispatch = useDispatch();
+  const [searchField, setSearchField] = useState('');
   const cryptoList = useSelector((state) => state.CryptoList);
   const FetchData = () => {
     dispatch(GetCryptoList());
@@ -15,9 +16,13 @@ const CryptoList = () => {
   React.useEffect(() => {
     FetchData();
   }, []);
-
+  const handleChange = (e) => {
+    setSearchField(e.target.value);
+  };
   const ShowData = () => {
-    const filteredCoins = cryptoList.data.filter((coin) => coin.id.includes(search.toLowerCase()));
+    const filteredCoins = cryptoList.data.filter(
+      (coin) => coin.id.includes(searchField.toLowerCase()),
+    );
 
     if (!_.isEmpty(cryptoList.data)) {
       return (
@@ -43,20 +48,15 @@ const CryptoList = () => {
     }
     return <p>Unable to get data</p>;
   };
+  function search() {
+    return (
 
+      <Search handleChange={handleChange} />
+    );
+  }
   return (
     <div>
-
-      <div
-        style={{
-          backgroundImage: 'url(/img/bitcoin.png)', backgroundPosition: '30% 50%', backgroundSize: '250px 250px', backgroundRepeat: 'no-repeat',
-        }}
-        className="search-section"
-      >
-
-        <input type="text" placeholder="search" onChange={(e) => setSearch(e.target.value)} />
-
-      </div>
+      {search() }
       {ShowData()}
     </div>
   );
